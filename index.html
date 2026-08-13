@@ -4,26 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Puddle Lane — Website Concept</title>
-<meta name="description" content="A website concept for Puddle Lane, an independent card, candle and gift boutique on Falkirk High Street.">
+<meta name="description" content="A website concept for Puddle Lane, an independent gift boutique at 109 High Street, Falkirk.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="review-banner">
   <div class="review-banner__inner">
-    <strong>Website concept for Liza — Puddle Lane</strong>
-    <span>Nothing here is live yet. Have a look, and tell me what to change, add or drop.</span>
+    <strong>Website concept for Liza</strong>
+    <span>Nothing here is live. Have a look, then tell me what to change, add or bin.</span>
   </div>
 </div>
 
 <header class="site-header" id="top">
   <a class="brand" href="#top">
     <span class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="19" class="mark-ring"/><path d="M12 22c1.5-3 3-5 8-5s6.5 2 8 5" class="mark-drop"/><circle cx="20" cy="14" r="2.2" class="mark-dot"/></svg>
+      <svg viewBox="0 0 44 44" width="44" height="44">
+        <circle cx="22" cy="22" r="21" class="mark-bg"/>
+        <path d="M10 24c0-6.6 5.4-12 12-12s12 5.4 12 12c-2.4-1.8-4-1.8-6 0-2-1.8-4-1.8-6 0-2-1.8-4-1.8-6 0-2-1.8-3.6-1.8-6 0z" class="mark-canopy"/>
+        <path d="M22 24v7.5a2.6 2.6 0 0 1-5.2 0" class="mark-handle"/>
+        <circle cx="22" cy="9.4" r="1.5" class="mark-dot"/>
+      </svg>
     </span>
     <span class="brand-text">
       <span class="brand-name">Puddle Lane</span>
@@ -32,9 +37,10 @@
   </a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
   <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-    <a href="#offer">What we do</a>
+    <a href="#occasions">Occasions</a>
+    <a href="#shop">In the shop</a>
+    <a href="#wrap">The wrap</a>
     <a href="#visit">Find us</a>
-    <a href="#follow">Follow along</a>
     <a class="nav-cta" href="#contact">Get in touch</a>
   </nav>
 </header>
@@ -43,145 +49,272 @@
 
   <section class="hero">
     <div class="hero-copy">
-      <p class="eyebrow">Independent card &amp; gift boutique · Falkirk High Street</p>
-      <h1>A little shop, full of thoughtful things.</h1>
-      <p class="lead">Puddle Lane is an independent boutique on Falkirk High Street &mdash; cards, candles, jewellery and gifts for every occasion, all wrapped with love before they leave the counter.</p>
+      <p class="eyebrow">Independent gift boutique &middot; 109 High Street, Falkirk</p>
+      <h1>Look for the <em>wee brolly</em> on the High Street.</h1>
+      <p class="lead">Puddle Lane is a small independent boutique in the middle of Falkirk. Cards, candles, jewellery and gifts for every occasion, and every single one wrapped beautifully before it leaves the counter.</p>
       <div class="hero-actions">
-        <a class="button" href="#visit">Find us on the High Street ↓</a>
-        <a class="button button-ghost" href="#follow">See us on Instagram &amp; Facebook</a>
+        <a class="button button-primary" href="#visit">Find the shop</a>
+        <a class="button button-ghost" href="https://www.instagram.com/puddle_lane_falkirk/" target="_blank" rel="noreferrer">See what's in just now</a>
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
-      <svg viewBox="0 0 420 420" class="art-puddle">
-        <ellipse cx="210" cy="330" rx="150" ry="26" class="p-puddle p-fill"/>
-        <ellipse cx="210" cy="330" rx="150" ry="26" class="p-ring p-r1"/>
-        <ellipse cx="210" cy="330" rx="110" ry="19" class="p-ring p-r2"/>
-        <g class="p-parcel">
-          <rect x="140" y="150" width="140" height="120" rx="4" class="p-box"/>
-          <rect x="140" y="150" width="140" height="34" class="p-lid"/>
-          <rect x="200" y="150" width="20" height="120" class="p-ribbon"/>
-          <path d="M175 150c0-20 12-32 30-32s30 12 30 32" class="p-bow-line"/>
-          <circle cx="196" cy="140" r="10" class="p-bow"/>
-          <circle cx="224" cy="140" r="10" class="p-bow"/>
+      <svg viewBox="0 0 460 470" class="art-shop" role="img">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="45%" r="65%">
+            <stop offset="0%" stop-color="#ffe9b8"/>
+            <stop offset="70%" stop-color="#f6d089"/>
+            <stop offset="100%" stop-color="#e8bd6f"/>
+          </radialGradient>
+          <linearGradient id="puddleGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#b9d2d6"/>
+            <stop offset="100%" stop-color="#9dbcc2"/>
+          </linearGradient>
+        </defs>
+
+        <g class="rain">
+          <line x1="40"  y1="-20" x2="32"  y2="24"/>
+          <line x1="110" y1="-40" x2="102" y2="4"/>
+          <line x1="180" y1="-10" x2="172" y2="34"/>
+          <line x1="250" y1="-50" x2="242" y2="-6"/>
+          <line x1="320" y1="-25" x2="312" y2="19"/>
+          <line x1="390" y1="-45" x2="382" y2="-1"/>
+          <line x1="430" y1="-15" x2="422" y2="29"/>
+          <line x1="75"  y1="-60" x2="67"  y2="-16"/>
+          <line x1="215" y1="-70" x2="207" y2="-26"/>
+          <line x1="355" y1="-65" x2="347" y2="-21"/>
         </g>
-        <g class="p-sparkle">
-          <path d="M96 110 l6 16 16 6 -16 6 -6 16 -6-16-16-6 16-6z"/>
-          <path d="M320 90 l4 11 11 4 -11 4 -4 11 -4-11-11-4 11-4z"/>
-          <path d="M330 220 l4 11 11 4 -11 4 -4 11 -4-11-11-4 11-4z"/>
-        </g>
+
+        <!-- shopfront -->
+        <rect x="70" y="96" width="320" height="286" rx="3" class="s-facade"/>
+        <rect x="60" y="82" width="340" height="20" rx="3" class="s-cornice"/>
+
+        <!-- fascia -->
+        <rect x="82" y="110" width="296" height="42" class="s-fascia"/>
+        <text x="230" y="139" text-anchor="middle" class="s-fascia-text">PUDDLE LANE</text>
+
+        <!-- awning -->
+        <path d="M78 156h304l-10 34H88z" class="s-awning"/>
+        <path d="M88 190h294l-6 12H94z" class="s-awning-hem"/>
+
+        <!-- window -->
+        <rect x="96" y="212" width="152" height="132" rx="2" class="s-window-frame"/>
+        <rect x="104" y="220" width="136" height="116" rx="1" fill="url(#glow)"/>
+        <line x1="104" y1="270" x2="240" y2="270" class="s-shelf"/>
+        <line x1="104" y1="308" x2="240" y2="308" class="s-shelf"/>
+        <!-- window display -->
+        <rect x="116" y="248" width="16" height="22" class="s-item-a"/>
+        <rect x="142" y="254" width="12" height="16" class="s-item-b"/>
+        <circle cx="176" cy="260" r="9" class="s-item-a"/>
+        <rect x="200" y="246" width="18" height="24" rx="2" class="s-item-b"/>
+        <rect x="118" y="288" width="20" height="20" rx="2" class="s-item-b"/>
+        <circle cx="158" cy="298" r="10" class="s-item-a"/>
+        <rect x="186" y="284" width="14" height="24" class="s-item-a"/>
+        <rect x="212" y="290" width="16" height="18" rx="2" class="s-item-b"/>
+        <line x1="172" y1="212" x2="172" y2="344" class="s-mullion"/>
+
+        <!-- door -->
+        <rect x="272" y="212" width="86" height="170" rx="2" class="s-door"/>
+        <rect x="284" y="226" width="62" height="70" rx="1" fill="url(#glow)" opacity="0.85"/>
+        <circle cx="346" cy="300" r="3.5" class="s-handle"/>
+        <rect x="284" y="312" width="62" height="56" rx="2" class="s-door-panel"/>
+
+        <!-- number plaque -->
+        <rect x="298" y="182" width="34" height="22" rx="3" class="s-plaque"/>
+        <text x="315" y="198" text-anchor="middle" class="s-plaque-text">109</text>
+
+        <!-- hanging sign with brolly -->
+        <line x1="70" y1="176" x2="34" y2="176" class="s-bracket"/>
+        <line x1="38" y1="176" x2="38" y2="192" class="s-bracket"/>
+        <circle cx="38" cy="216" r="25" class="s-sign"/>
+        <path d="M25 218c0-7.2 5.8-13 13-13s13 5.8 13 13c-2.6-2-4.3-2-6.5 0-2.2-2-4.3-2-6.5 0-2.2-2-4.3-2-6.5 0-2.2-2-3.9-2-6.5 0z" class="s-sign-canopy"/>
+        <path d="M38 218v8a2.4 2.4 0 0 1-4.8 0" class="s-sign-handle"/>
+
+        <!-- pavement -->
+        <line x1="20" y1="382" x2="440" y2="382" class="s-kerb"/>
+
+        <!-- puddle + reflection -->
+        <ellipse cx="230" cy="412" rx="146" ry="26" fill="url(#puddleGrad)" opacity="0.55"/>
+        <ellipse cx="172" cy="410" rx="42" ry="12" class="s-reflect"/>
+        <ellipse cx="315" cy="414" rx="24" ry="8" class="s-reflect"/>
+        <ellipse cx="230" cy="412" rx="146" ry="26" class="s-ripple r1"/>
+        <ellipse cx="230" cy="412" rx="104" ry="18" class="s-ripple r2"/>
+        <ellipse cx="230" cy="412" rx="62"  ry="11" class="s-ripple r3"/>
       </svg>
     </div>
   </section>
 
   <section class="strip">
     <div class="strip-item"><strong>Est. 2018</strong><span>On Falkirk High Street</span></div>
-    <div class="strip-item"><strong>Gift-wrapped</strong><span>Every item, every time</span></div>
-    <div class="strip-item"><strong>Independent</strong><span>Run by Liza, in Falkirk</span></div>
-    <div class="strip-item"><strong>100% recommend</strong><span>13 reviews on Facebook</span></div>
+    <div class="strip-item"><strong>100% recommend</strong><span>From 13 Facebook reviews</span></div>
+    <div class="strip-item"><strong>Wrapped free</strong><span>Every gift, every time</span></div>
+    <div class="strip-item"><strong>Independent</strong><span>Run in person by Liza</span></div>
   </section>
 
-  <section id="offer" class="section">
-    <p class="eyebrow">What's in the shop</p>
-    <h2>Cards, gifts, and a proper wrap.</h2>
-    <p class="section-lead">A browse-friendly boutique with something for most occasions — no pressure to buy, just a nice place to look.</p>
-    <div class="offer-grid">
-      <article class="offer-card">
-        <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="24" rx="2" class="i-line"/><path d="M8 12l16 12 16-12" class="i-line i-nofill"/></svg></div>
-        <h3>Cards for every occasion</h3>
-        <p>Birthdays, thank-yous, new babies, sympathy — a proper range for whatever the moment calls for.</p>
-      </article>
-      <article class="offer-card">
-        <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M16 20h16v18a2 2 0 0 1-2 2H18a2 2 0 0 1-2-2V20z" class="i-line i-nofill"/><path d="M16 20c0-2 2-3 8-3s8 1 8 3" class="i-line i-nofill"/><path d="M24 17v-4" class="i-line i-nofill"/><path d="M24 13c-2-2-2-4 0-6 2 2 2 4 0 6z" class="i-line i-nofill"/></svg></div>
-        <h3>Candles &amp; home fragrance</h3>
-        <p>Scented candles and fragrance pieces for the home — the kind of thing that makes a lovely gift or a treat for yourself.</p>
-      </article>
-      <article class="offer-card">
-        <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="20" r="10" class="i-line i-nofill"/><path d="M17 28l-5 14 12-6 12 6-5-14" class="i-line i-nofill"/></svg></div>
-        <h3>Jewellery, bags &amp; accessories</h3>
-        <p>Jewellery, scarves, gloves and leather bags — thoughtful pieces for the people in your life, or a treat for yourself.</p>
-      </article>
-      <article class="offer-card">
-        <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 20h28v18a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V20z" class="i-line i-nofill"/><path d="M8 14h32v6H8z" class="i-line i-nofill"/><path d="M24 14V8m-8 6c0-4 3-6 8-6s8 2 8 6" class="i-line i-nofill"/></svg></div>
-        <h3>Gift-wrapped, always</h3>
-        <p>Every gift wrapped properly before it leaves the counter — paper, ribbon and all, no extra charge.</p>
-      </article>
-      <article class="offer-card">
-        <div class="offer-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 6l4.5 12.5H41l-10 8 4 13-11-8-11 8 4-13-10-8h12.5z" class="i-line i-nofill"/></svg></div>
-        <h3>A proper local welcome</h3>
-        <p>Small, independent and run in person — pop in for a browse, a chat, or to pick something up for someone.</p>
-      </article>
+  <section id="occasions" class="section">
+    <div class="section-head">
+      <p class="eyebrow">Stuck for something?</p>
+      <h2>Come in with an occasion. Leave with the gift.</h2>
+      <p class="section-lead">Most folk arrive knowing the person and not the present. That is the bit we are good at. Tell us who it is for and we will find you something, then wrap it while you wait.</p>
     </div>
-    <p class="note center">This is based on what I could see in your posts and photos — tell me if anything's changed, or if there's a category I've missed.</p>
+    <ul class="occasion-list">
+      <li>A new baby</li>
+      <li>A new home</li>
+      <li>A big birthday</li>
+      <li>An anniversary</li>
+      <li>A wedding</li>
+      <li>A thank you</li>
+      <li>A sympathy card</li>
+      <li>A just because</li>
+    </ul>
   </section>
 
-  <section id="click-collect" class="section band">
-    <p class="eyebrow light">If it's useful</p>
-    <h2 class="light">Reserve something, collect in person.</h2>
-    <p class="section-lead light">No online shop, no online payments — just a simple way for someone to ask you to put something by, then come in and collect it. Entirely optional, and easy to leave out if it's not for you.</p>
-    <a class="button button-primary" href="#contact">See how it could work ↗</a>
+  <section id="shop" class="section section-shop">
+    <div class="section-head">
+      <p class="eyebrow">What's on the shelves</p>
+      <h2>A small shop that punches above its size.</h2>
+    </div>
+    <ol class="shelf-list">
+      <li class="shelf-item">
+        <span class="shelf-num">01</span>
+        <div class="shelf-body">
+          <h3>Cards for every occasion</h3>
+          <p>Birthdays, new babies, new homes, thank yous and sympathy. A proper considered range, not a spinner rack of the same six designs.</p>
+        </div>
+      </li>
+      <li class="shelf-item">
+        <span class="shelf-num">02</span>
+        <div class="shelf-body">
+          <h3>Candles and home fragrance</h3>
+          <p>Scented candles and fragrance for the house, made in small batches. The sort that come with proper care instructions, because they are worth looking after.</p>
+        </div>
+      </li>
+      <li class="shelf-item">
+        <span class="shelf-num">03</span>
+        <div class="shelf-body">
+          <h3>Jewellery and accessories</h3>
+          <p>Rings, beads, scarves and gloves. The wee treat folk buy for themselves just as often as they buy it for somebody else.</p>
+        </div>
+      </li>
+      <li class="shelf-item">
+        <span class="shelf-num">04</span>
+        <div class="shelf-body">
+          <h3>Bags and leather goods</h3>
+          <p>Clutches, purses and hand finished leather. The kind of thing that outlasts the occasion it was bought for.</p>
+        </div>
+      </li>
+      <li class="shelf-item">
+        <span class="shelf-num">05</span>
+        <div class="shelf-body">
+          <h3>Seasonal and one offs</h3>
+          <p>Stock moves with the season and with whatever catches Liza's eye. If you saw it on the Instagram last week, it is worth asking about.</p>
+        </div>
+      </li>
+    </ol>
+    <aside class="review-note">
+      <p class="review-note__label">Note for Liza</p>
+      <p>These five come from your own posts and photos. Tell me what I have got wrong, what I have missed, and what you would rather lead with.</p>
+    </aside>
+  </section>
+
+  <section id="wrap" class="feature">
+    <div class="feature-inner">
+      <div class="feature-copy">
+        <p class="eyebrow light">The bit people remember</p>
+        <h2 class="light">"We'll even beautifully wrap them."</h2>
+        <p class="section-lead light">That is Liza's own line, and it is why a lot of folk come back. Paper, ribbon and a proper job, done at the counter while you wait. No charge, no upsell, and no apologising for the state of it when you hand it over.</p>
+      </div>
+      <div class="feature-art" aria-hidden="true">
+        <svg viewBox="0 0 240 200">
+          <rect x="52" y="78" width="136" height="98" rx="3" class="w-box"/>
+          <rect x="52" y="78" width="136" height="26" class="w-lid"/>
+          <rect x="108" y="78" width="24" height="98" class="w-ribbon"/>
+          <path d="M84 78c0-22 14-34 36-34s36 12 36 34" class="w-bow-line"/>
+          <ellipse cx="104" cy="66" rx="15" ry="11" class="w-bow"/>
+          <ellipse cx="136" cy="66" rx="15" ry="11" class="w-bow"/>
+          <circle cx="120" cy="66" r="6" class="w-knot"/>
+          <path d="M30 52l3.6 9.4 9.4 3.6-9.4 3.6L30 78l-3.6-9.4L17 65l9.4-3.6z" class="w-spark"/>
+          <path d="M210 108l3 7.8 7.8 3-7.8 3-3 7.8-3-7.8-7.8-3 7.8-3z" class="w-spark"/>
+        </svg>
+      </div>
+    </div>
   </section>
 
   <section id="visit" class="section split">
     <div class="split-copy">
       <p class="eyebrow">Come and say hello</p>
       <h2>109 High Street, Falkirk.</h2>
-      <p>Right on the High Street, in behind the old vennels near the Wheatsheaf. Easiest reached on foot from the Howgate or the bus station — there's Council parking nearby if you're driving in, free on Sundays and bank holidays.</p>
-      <p class="note"><strong>Hours:</strong> we're keeping this simple rather than printing days that might be wrong — a line here pointing people to your Facebook or Instagram for today's hours means it's never out of date, even as your days change. Happy to add fixed hours instead if you'd rather.</p>
+      <p>Right on the High Street near the Wheatsheaf, a couple of minutes on foot from the Howgate and the bus station. Council parking is close by, and free on Sundays and bank holidays.</p>
       <div class="visit-facts">
         <div><strong>Address</strong><span>109 High Street, Falkirk, FK1 1ED</span></div>
         <div><strong>Phone</strong><span><a href="tel:+441324227300">01324 227300</a></span></div>
         <div><strong>Email</strong><span><a href="mailto:puddlelane@yahoo.com">puddlelane@yahoo.com</a></span></div>
+        <div><strong>Hours</strong><span>Posted on <a href="https://www.instagram.com/puddle_lane_falkirk/" target="_blank" rel="noreferrer">Instagram</a> and <a href="https://www.facebook.com/puddlelanegifts/" target="_blank" rel="noreferrer">Facebook</a></span></div>
       </div>
+      <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&amp;query=109%20High%20Street%2C%20Falkirk%2C%20FK1%201ED" target="_blank" rel="noreferrer">Get directions</a>
+      <aside class="review-note">
+        <p class="review-note__label">Note for Liza</p>
+        <p>I have not printed fixed opening hours, since yours seem to move with the season. Pointing folk at your socials means the site can never be out of date. If you would rather have set hours up there, that is a two minute change.</p>
+      </aside>
     </div>
     <div class="split-map" aria-hidden="true">
       <svg viewBox="0 0 380 340" class="art-map">
-        <rect x="10" y="10" width="360" height="320" rx="6" class="m-frame"/>
-        <path d="M20 240 H360" class="m-street"/>
-        <text x="24" y="232" class="m-label">HIGH STREET</text>
-        <rect x="150" y="190" width="60" height="46" class="m-shop"/>
-        <text x="180" y="217" text-anchor="middle" class="m-shop-label">109</text>
-        <path d="M240 240 L240 150 L300 150" class="m-vennel"/>
-        <text x="248" y="180" class="m-label m-small">VENNEL</text>
-        <rect x="285" y="120" width="50" height="34" class="m-landmark"/>
-        <text x="310" y="141" text-anchor="middle" class="m-landmark-label">WHEATSHEAF</text>
-        <circle cx="180" cy="270" r="4" class="m-pin-dot"/>
-        <path d="M180 270 a10 10 0 1 1 0.01 0" class="m-pin-ring"/>
+        <rect x="8" y="8" width="364" height="324" rx="8" class="m-frame"/>
+        <path d="M8 250 H372" class="m-street"/>
+        <text x="24" y="240" class="m-label">HIGH STREET</text>
+        <path d="M250 250 L250 150 L320 150" class="m-vennel"/>
+        <text x="258" y="188" class="m-label m-small">VENNEL</text>
+        <rect x="292" y="118" width="58" height="34" rx="3" class="m-landmark"/>
+        <text x="321" y="139" text-anchor="middle" class="m-landmark-label">WHEATSHEAF</text>
+        <rect x="60" y="196" width="52" height="30" rx="3" class="m-block"/>
+        <rect x="126" y="196" width="46" height="30" rx="3" class="m-block"/>
+        <rect x="186" y="192" width="66" height="38" rx="3" class="m-shop"/>
+        <text x="219" y="216" text-anchor="middle" class="m-shop-label">109</text>
+        <circle cx="219" cy="278" r="5" class="m-pin-dot"/>
+        <circle cx="219" cy="278" r="13" class="m-pin-ring"/>
+        <text x="219" y="306" text-anchor="middle" class="m-label m-small">YOU'RE HERE</text>
       </svg>
     </div>
   </section>
 
+  <section id="collect" class="section band">
+    <p class="eyebrow">Optional, only if it suits you</p>
+    <h2>Reserve it, then come and collect it.</h2>
+    <p class="section-lead center">No online shop and no card payments to worry about. Someone spots something on your Instagram, sends a message, you put it by the till, they come in and collect it. The site just makes that easy to ask for.</p>
+    <a class="button button-ghost" href="#contact">Ask me how it would work</a>
+  </section>
+
   <section id="follow" class="section band dark">
-    <p class="eyebrow light">The shop's day-to-day</p>
-    <h2 class="light">Instagram and Facebook stay in charge.</h2>
-    <p class="section-lead light">Your socials are where the shop already lives day to day, so the site doesn't try to replace them. It just gives people a proper front door, then hands them straight over to what's actually current.</p>
+    <p class="eyebrow light">The shop's day to day</p>
+    <h2 class="light">Instagram stays in charge.</h2>
+    <p class="section-lead light center">New stock, opening hours and everything else goes up on your socials first. The site does not try to compete with that. It gives the shop a proper front door, then hands people straight over to what is actually current.</p>
     <div class="follow-grid">
       <a class="follow-card" href="https://www.instagram.com/puddle_lane_falkirk/" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 24 24" class="follow-icon" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" class="f-line i-nofill"/><circle cx="12" cy="12" r="4.5" class="f-line i-nofill"/><circle cx="17.5" cy="6.5" r="1.2" class="f-dot"/></svg>
         <span class="follow-name">@puddle_lane_falkirk</span>
-        <span class="follow-sub">Instagram ↗</span>
+        <span class="follow-sub">Instagram</span>
       </a>
       <a class="follow-card" href="https://www.facebook.com/puddlelanegifts/" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 24 24" class="follow-icon" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" class="f-line i-nofill"/><path d="M14 8h2V5h-2c-2 0-3.2 1.2-3.2 3.2V11H9v3h1.8v5h3v-5H16l.4-3h-2.6V8.6c0-.4.2-.6.6-.6z" class="f-fill"/></svg>
         <span class="follow-name">Puddle Lane, Falkirk</span>
-        <span class="follow-sub">Facebook ↗</span>
+        <span class="follow-sub">Facebook</span>
       </a>
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section contact">
     <p class="eyebrow">What do you think?</p>
     <h2>Tell me what to change.</h2>
-    <p class="section-lead">This is a first pass, built around what I could find about the shop online, not a finished site. If you'd like to go ahead, or just want something changed first, the easiest thing is to reply to my last email.</p>
+    <p class="section-lead">This is a first pass built from your posts, photos and reviews. It is not finished and nothing is set. If you want to go ahead, or you want half of it changed first, just reply to my last email.</p>
     <div class="contact-facts">
-      <a class="button button-primary" href="mailto:tempanywebstudios@gmail.com?subject=Puddle%20Lane%20website">Email me your thoughts ↗</a>
+      <a class="button button-primary" href="mailto:tempanywebstudios@gmail.com?subject=Puddle%20Lane%20website">Email me your thoughts</a>
     </div>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>This is an independent concept built by Tempany Web Studio for Puddle Lane's owner to review. It is not live, not commissioned yet, and nothing here has been published anywhere public.</p>
-  <a class="back-to-top" href="#top">↑ Back to top</a>
+  <p>An independent concept built by Tempany Web Studio for the owner of Puddle Lane to review. It is not live, it has not been commissioned, and it is not published anywhere public. All shop details were taken from Puddle Lane's own Instagram and Facebook pages.</p>
+  <a class="back-to-top" href="#top">Back to top</a>
 </footer>
 
 <script src="script.js"></script>
