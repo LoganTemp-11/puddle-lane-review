@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vendor/leaflet/leaflet.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -258,17 +259,13 @@
     </div>
     <div class="split-map">
       <div class="map-frame">
-        <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-3.787878%2C55.997559%2C-3.780878%2C56.000559&amp;layer=mapnik&amp;marker=55.999059%2C-3.784378"
-          title="Map showing Puddle Lane at 109 High Street, Falkirk"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div id="shop-map" role="img" aria-label="Map showing Puddle Lane at 109 High Street, Falkirk"></div>
       </div>
       <div class="map-foot">
         <span class="map-pin">109 High Street, Falkirk, FK1 1ED</span>
-        <a href="https://www.openstreetmap.org/?mlat=55.999059&amp;mlon=-3.784378#map=18/55.999059/-3.784378" target="_blank" rel="noreferrer">Open larger map</a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=109%20High%20Street%2C%20Falkirk%2C%20FK1%201ED" target="_blank" rel="noreferrer">Open larger map</a>
       </div>
-      <p class="map-attrib">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors</p>
+      <p class="map-attrib">&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions" target="_blank" rel="noreferrer">CARTO</a></p>
     </div>
   </section>
 
@@ -313,6 +310,7 @@
   <a class="back-to-top" href="#top">Back to top</a>
 </footer>
 
+<script src="vendor/leaflet/leaflet.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

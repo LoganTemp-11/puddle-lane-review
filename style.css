@@ -172,7 +172,22 @@ h2.light { color: #fff; }
 .visit-facts a { text-decoration: underline; color: var(--plum); }
 .split-map { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
 .map-frame { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); background: var(--cream-2); aspect-ratio: 4 / 3; }
-.map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+#shop-map { position: absolute; inset: 0; width: 100%; height: 100%; background: var(--cream-2); }
+
+/* Brand pin */
+.shop-pin { position: relative; }
+.shop-pin__dot { position: absolute; top: 50%; left: 50%; width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; background: var(--plum); border: 2.5px solid #fff; border-radius: 50%; box-shadow: 0 1px 5px rgba(43,33,25,0.4); }
+.shop-pin__pulse { position: absolute; top: 50%; left: 50%; width: 26px; height: 26px; margin: -13px 0 0 -13px; background: rgba(122,59,94,0.28); border-radius: 50%; animation: pinPulse 2.4s ease-out infinite; }
+@keyframes pinPulse { 0% { transform: scale(0.55); opacity: 0.9; } 70% { transform: scale(1.35); opacity: 0; } 100% { transform: scale(1.35); opacity: 0; } }
+
+/* Leaflet chrome, tuned to the palette */
+.leaflet-container { font-family: var(--sans); background: var(--cream-2); }
+.leaflet-control-zoom { border: none !important; box-shadow: 0 1px 6px rgba(43,33,25,0.18) !important; }
+.leaflet-control-zoom a { background: #fff; color: var(--ink); border-bottom-color: var(--line) !important; }
+.leaflet-control-zoom a:hover { background: var(--cream); color: var(--plum); }
+.leaflet-popup-content-wrapper { border-radius: 8px; box-shadow: 0 3px 14px rgba(43,33,25,0.22); }
+.leaflet-popup-content { font-size: 0.86rem; color: var(--ink-2); margin: 11px 14px; line-height: 1.45; }
+.leaflet-popup-content strong { color: var(--ink); font-family: var(--serif); font-size: 1rem; }
 .map-foot { display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: baseline; justify-content: space-between; padding: 13px 4px 0; }
 .map-pin { font-size: 0.88rem; font-weight: 700; color: var(--ink); }
 .map-foot a { font-size: 0.85rem; color: var(--plum); text-decoration: underline; font-weight: 600; }
@@ -206,6 +221,7 @@ h2.light { color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
   .rain line { animation: none; opacity: 0.3; }
+  .shop-pin__pulse { animation: none; opacity: 0.5; }
   html { scroll-behavior: auto; }
 }
 
