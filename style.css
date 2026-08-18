@@ -82,10 +82,30 @@ p { margin: 0 0 1em; }
 .hero-actions, .contact-facts { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 26px; }
 
 /* Hero */
-.hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; padding: 76px 5% 68px; max-width: var(--wrap); margin: 0 auto; }
-.hero .lead { font-size: 1.12rem; max-width: 46ch; }
-.hero-art { display: flex; justify-content: center; }
-.art-shop { max-width: 430px; width: 100%; overflow: visible; }
+.hero { display: block; }
+
+/* Hero window: the shopfront illustration as a wide band, like glancing through
+   the window as you walk up to the shop, before you read the sign underneath. */
+.hero-window {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(220px, 30vw, 440px);
+  padding: clamp(14px, 2.5vw, 28px) 4%;
+  background: linear-gradient(180deg, var(--gold-soft) 0%, var(--cream-2) 65%, var(--cream-2) 100%);
+  border-bottom: 1px solid var(--line);
+}
+.art-shop { width: 100%; height: 100%; }
+
+/* Hero mat: the eyebrow, headline, lead and buttons sit below the window,
+   like a welcome mat you step onto once you have looked up at the shop. */
+.hero-mat { max-width: var(--wrap); margin: 0 auto; padding: clamp(40px, 6vw, 64px) 5% clamp(48px, 7vw, 76px); text-align: center; }
+.hero-mat h1 { max-width: 22ch; margin-left: auto; margin-right: auto; }
+.hero-mat .lead { font-size: 1.12rem; max-width: 46ch; margin-left: auto; margin-right: auto; }
+.hero-mat .hero-actions { justify-content: center; }
 
 .rain line { stroke: var(--sky); stroke-width: 2; stroke-linecap: round; opacity: 0.5; animation: fall 1.5s linear infinite; }
 .rain line:nth-child(2n) { animation-duration: 1.9s; opacity: 0.34; }
@@ -226,8 +246,7 @@ h2.light { color: #fff; }
 }
 
 @media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; padding-top: 48px; gap: 36px; }
-  .hero-art { order: -1; max-width: 300px; margin: 0 auto; }
+  .hero-window { height: clamp(200px, 42vw, 320px); }
   .feature-inner { grid-template-columns: 1fr; gap: 32px; }
   .feature-art { order: -1; }
   .feature-art svg { max-width: 200px; }
