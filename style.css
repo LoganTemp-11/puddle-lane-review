@@ -166,7 +166,11 @@ h2.light { color: #fff; }
 .occasion-list li { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 11px 24px; }
 
 /* Shelf list */
-.section-shop { padding-top: 20px; }
+/* scroll-margin-top clears the 73px sticky header when the "In the shop" nav link
+   jumps here. This section has a reduced top padding (20px), so without it the
+   "What's on the shelves" eyebrow lands behind the header. The other sections
+   have 88px of padding and already clear it, so this is scoped rather than global. */
+.section-shop { padding-top: 20px; scroll-margin-top: 70px; }
 .shelf-list { list-style: none; margin: 44px 0 0; padding: 0; border-top: 1px solid var(--line); }
 .shelf-item { display: grid; grid-template-columns: 76px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: start; }
 .shelf-num { font-family: var(--serif); font-size: 1.5rem; color: var(--plum); opacity: 0.55; line-height: 1.2; }
