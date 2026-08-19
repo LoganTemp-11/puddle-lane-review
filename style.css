@@ -54,7 +54,10 @@ p { margin: 0 0 1em; }
 .review-note__label { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.66rem; font-weight: 800; color: var(--plum); margin: 0 0 5px !important; }
 
 /* Header */
-.site-header { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 24px; padding: 14px 5%; background: rgba(251,246,240,0.93); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-2); }
+/* Tint and blur on ::before so the header does not become the containing block
+   for the position:fixed mobile nav (which would trap it inside the header). */
+.site-header { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 24px; padding: 14px 5%; border-bottom: 1px solid var(--line-2); }
+.site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(251,246,240,0.93); backdrop-filter: blur(10px); }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
 .mark-bg { fill: var(--plum); }
 .mark-canopy { fill: var(--gold); }
@@ -256,7 +259,10 @@ h2.light { color: #fff; }
   .strip-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
 }
 @media (max-width: 900px) {
-  .main-nav { position: fixed; inset: 64px 0 0 0; background: var(--cream); flex-direction: column; align-items: flex-start; padding: 24px 6%; gap: 18px; display: none; border-top: 1px solid var(--line); overflow-y: auto; }
+  /* absolute + top:100% anchors the panel to the header's own bottom edge. The old
+     fixed inset:64px ignored the review banner above the header, so the panel sat
+     102px underneath it. */
+  .main-nav { position: absolute; top: 100%; left: 0; right: 0; max-height: calc(100vh - 100%); background: var(--cream); flex-direction: column; align-items: flex-start; padding: 24px 6%; gap: 18px; display: none; border-top: 1px solid var(--line); overflow-y: auto; }
   .main-nav.open { display: flex; }
   .menu-toggle { display: flex; }
 }
