@@ -6,14 +6,14 @@
   --ink-3: #726f77;
   --line: rgba(33, 31, 34, 0.14);
   --line-2: rgba(33, 31, 34, 0.07);
-  --plum: #b8305a;
-  --plum-dark: #8f2c4d;
-  --plum-soft: #f7dce4;
-  --gold: #8c8790;
-  --gold-soft: #ece9ec;
-  --sky: #c9c6cc;
-  --dark: #171518;
-  --dark-2: #221f24;
+  --plum: #cba29f;
+  --plum-dark: #9e7e7c;
+  --plum-soft: #f2e8e7;
+  --gold: #8f8a86;
+  --gold-soft: #eeebe7;
+  --sky: #cac5c0;
+  --dark: #0d0b0b;
+  --dark-2: #1c1a1a;
   --serif: "Fraunces", Georgia, serif;
   --sans: "Nunito Sans", -apple-system, "Segoe UI", sans-serif;
   --wrap: 1180px;
@@ -50,7 +50,7 @@ p { margin: 0 0 1em; }
 .review-banner__inner span { color: rgba(255,255,255,0.84); }
 
 .review-note { margin-top: 34px; padding: 18px 20px; background: var(--plum-soft); border-left: 3px solid var(--plum); border-radius: 0 8px 8px 0; }
-.review-note p { font-size: 0.87rem; margin: 0; color: #5c4453; }
+.review-note p { font-size: 0.87rem; margin: 0; color: var(--ink-2); }
 .review-note__label { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.66rem; font-weight: 800; color: var(--plum); margin: 0 0 5px !important; }
 
 /* Header */
@@ -59,8 +59,8 @@ p { margin: 0 0 1em; }
 .site-header { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; gap: 24px; padding: 14px 5%; border-bottom: 1px solid var(--line-2); }
 .site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(251,246,240,0.93); backdrop-filter: blur(10px); }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
-.mark-bg { fill: var(--plum); }
-.mark-canopy { fill: var(--gold); }
+.mark-bg { fill: var(--dark); }
+.mark-canopy { fill: var(--plum); }
 .mark-handle { fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; }
 .mark-dot { fill: #fff; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.18; }
@@ -135,7 +135,7 @@ p { margin: 0 0 1em; }
 .s-plaque-text { font-family: var(--sans); font-size: 13px; font-weight: 800; fill: var(--plum-dark); }
 .s-bracket { stroke: var(--dark); stroke-width: 2.5; stroke-linecap: round; }
 .s-sign { fill: var(--dark); }
-.s-sign-canopy { fill: var(--gold); }
+.s-sign-canopy { fill: var(--plum); }
 .s-sign-handle { fill: none; stroke: var(--cream); stroke-width: 2; stroke-linecap: round; }
 .s-kerb { stroke: var(--ink-3); stroke-width: 2; opacity: 0.45; }
 .s-reflect { fill: var(--gold); opacity: 0.3; }
@@ -173,9 +173,18 @@ h2.light { color: #fff; }
 .section-shop { padding-top: 20px; scroll-margin-top: 70px; }
 .shelf-list { list-style: none; margin: 44px 0 0; padding: 0; border-top: 1px solid var(--line); }
 .shelf-item { display: grid; grid-template-columns: 76px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: start; }
+.shelf-item.has-photo { grid-template-columns: 76px 96px 1fr; }
 .shelf-num { font-family: var(--serif); font-size: 1.5rem; color: var(--plum); opacity: 0.55; line-height: 1.2; }
+.shelf-photo { width: 96px; height: 96px; border-radius: 10px; overflow: hidden; background: var(--cream-2); }
+.shelf-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .shelf-body h3 { margin-bottom: 0.35em; }
 .shelf-body p { margin: 0; max-width: 62ch; font-size: 0.96rem; }
+
+/* Window photo — a real, portrait photo of the shop window, framed like a look through the glass */
+.window-band { padding: 0 5%; max-width: var(--wrap); margin: 48px auto 0; display: flex; justify-content: center; }
+.window-frame { width: min(380px, 100%); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 2px 20px rgba(43,33,25,0.1); position: relative; }
+.window-frame img { width: 100%; height: auto; display: block; }
+.window-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 18px; background: linear-gradient(0deg, rgba(13,11,11,0.72), transparent); color: #fff; font-size: 0.82rem; font-weight: 600; }
 
 /* Feature (the wrap) */
 .feature { background: var(--dark); color: rgba(255,255,255,0.84); }
@@ -274,6 +283,9 @@ h2.light { color: #fff; }
   .section { padding: 60px 5%; }
   .follow-grid { grid-template-columns: 1fr; }
   .shelf-item { grid-template-columns: 48px 1fr; gap: 16px; }
+  .shelf-item.has-photo { grid-template-columns: 48px 64px 1fr; }
+  .shelf-photo { width: 64px; height: 64px; border-radius: 8px; }
   .occasion-list li { font-size: 0.97rem; padding: 9px 18px; }
   .hero-actions .button { width: 100%; }
+  .window-frame img { max-height: 260px; }
 }
