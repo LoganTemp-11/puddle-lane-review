@@ -27,6 +27,7 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/fraunces-400-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/nunito-sans-400-latin.woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="scrollcraft.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="legal.css">
 </head>
@@ -34,39 +35,17 @@
 
 <a class="skip" href="#top">Skip to content</a>
 
-<div class="review-banner">
-  <div class="review-banner__inner">
-    <strong>Website concept for Liza</strong>
-    <span>Nothing here is live. Have a look, then tell me what to change, add or bin.</span>
-  </div>
-</div>
-
-<header class="site-header" data-chrome>
-  <a class="brand" href="./">
-    <span class="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 44 44" width="40" height="40">
-        <circle cx="22" cy="22" r="21" class="mark-bg"/>
-        <path d="M10 24c0-6.6 5.4-12 12-12s12 5.4 12 12c-2.4-1.8-4-1.8-6 0-2-1.8-4-1.8-6 0-2-1.8-4-1.8-6 0-2-1.8-3.6-1.8-6 0z" class="mark-canopy"/>
-        <path d="M22 24v7.5a2.6 2.6 0 0 1-5.2 0" class="mark-handle"/>
-        <circle cx="22" cy="9.4" r="1.5" class="mark-dot"/>
-      </svg>
-    </span>
-    <span class="brand-text">
-      <span class="brand-name">Puddle Lane</span>
-      <span class="brand-tag">Gifts wrapped with love</span>
-    </span>
+<header class="awning" data-chrome>
+  <a class="awning__brand" href="./" aria-label="Puddle Lane, back to the shop">
+    <svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#1c1a1a"/><path d="M10 24c0-6.6 5.4-12 12-12s12 5.4 12 12c-2.4-1.8-4-1.8-6 0-2-1.8-4-1.8-6 0-2-1.8-4-1.8-6 0-2-1.8-3.6-1.8-6 0z" fill="#cba29f"/><path d="M22 24v7.5a2.6 2.6 0 0 1-5.2 0" fill="none" stroke="#fbf6f0" stroke-width="2.2" stroke-linecap="round"/></svg>
+    Puddle Lane
   </a>
-  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
-  <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-    <a href="./#occasions">Who's it for?</a>
-    <a href="./#shop">In the shop</a>
-    <a href="./#wrap">The wrap</a>
-    <a href="./#collect">Reserve and collect</a>
-    <a class="nav-cta" href="./#visit">Find the shop</a>
-  </nav>
+  <p class="awning__hours tabular">109 High Street, Falkirk &middot; <b>Fri &amp; Sat, 10 to 4</b></p>
+  <a class="awning__cta" href="./#visit">Find the shop</a>
 </header>
+<div class="strip" role="note"><strong>Concept for Liza.</strong> <span class="strip__more">Nothing here is live.</span> <a href="./#close"><span class="strip__more">Tell Logan what to change</span><span class="strip__less">What to change?</span></a></div>
 
-<main id="top">
+<main id="top" class="legal-main">
 
 <article class="legal">
   <h1>Terms and conditions</h1>
@@ -108,13 +87,13 @@
     <p>I have not put a holding time on reservations because I do not know what you do now. If you have a rule, say a week, tell me and it goes in.</p>
   </aside>
 
-  <p class="back"><a class="button button-ghost" href="./">Back to the shop</a></p>
+  <p class="back"><a class="button button--ghost" href="./">Back to the shop</a></p>
 </article>
 
 </main>
 
-<footer class="site-footer">
-  <p>A website concept built by <a href="https://tempanywebstudios.co.uk/" target="_blank" rel="noopener noreferrer">Tempany Web Studios</a> for the owner of Puddle Lane to review. It is not live and it has not been commissioned. Shop details come from Puddle Lane's own Instagram and Facebook pages; photographs are Puddle Lane's own.</p>
+<footer class="close__foot legal-foot">
+  <p>A website concept built by <a href="https://tempanywebstudios.co.uk/" target="_blank" rel="noopener noreferrer">Tempany Web Studios</a> for the owner of Puddle Lane to review. Not live, not commissioned. Shop details come from Puddle Lane's own Instagram and Facebook pages; photographs are Puddle Lane's own.</p>
   <ul class="footer-links">
     <li><a href="privacy">Privacy policy</a></li>
     <li><a href="terms">Terms</a></li>
@@ -123,6 +102,6 @@
   </ul>
 </footer>
 
-<script src="script.js" defer></script>
+<script src="legal.js"></script>
 </body>
 </html>

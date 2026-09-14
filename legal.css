@@ -1,61 +1,29 @@
 /* Shared by privacy, terms and 404. Loads after style.css and reuses its tokens. */
-.legal { max-width: 720px; margin: 0 auto; padding: clamp(48px, 7vw, 80px) 5% clamp(64px, 8vw, 96px); }
+main.legal-main { padding-top: var(--chrome-h); }
+.legal { max-width: 720px; margin: 0 auto; padding: clamp(48px, 7vw, 80px) var(--gutter-r) clamp(48px, 7vw, 80px) var(--gutter-l); }
 .legal h1 { font-size: clamp(2rem, 1.2rem + 2.6vw, 3.1rem); margin-bottom: 0.3em; }
 .legal .updated { font-size: 0.86rem; color: var(--ink-3); margin-bottom: 2.2em; font-variant-numeric: tabular-nums; }
-.legal h2 { font-size: clamp(1.3rem, 1rem + 1vw, 1.7rem); margin: 1.9em 0 0.5em; scroll-margin-top: 90px; }
-.legal p, .legal li { font-size: 1rem; }
+.legal h2 { font-size: clamp(1.3rem, 1rem + 1vw, 1.7rem); margin: 1.9em 0 0.5em; scroll-margin-top: calc(var(--chrome-h) + 16px); }
+.legal p, .legal li { font-size: 1rem; margin-bottom: 0.9em; }
 .legal ul { padding-left: 1.2em; }
-.legal li { margin-bottom: 0.45em; }
 .legal a { color: var(--rose-ink); text-decoration: underline; text-underline-offset: 3px; }
 .legal a:hover { color: var(--ink); }
-.legal .summary { padding: 18px 22px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); margin: 0 0 2em; }
+.legal .summary { padding: 18px 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; margin: 0 0 2em; }
 .legal .summary p { margin: 0; font-size: 0.98rem; }
-.legal .summary p + p { margin-top: 0.6em; }
 .legal address { font-style: normal; }
-.legal .review-note { margin-top: 48px; }
-.legal .back { margin-top: 44px; }
+.legal .review-note { margin-top: 40px; padding: 14px 18px; background: var(--rose-soft); border-left: 3px solid var(--rose-ink); border-radius: 0 8px 8px 0; font-size: 0.88rem; }
+.legal .review-note p { margin: 0; }
+.legal .review-note__label { display: block; font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 800; color: var(--rose-ink); margin-bottom: 4px; }
+.legal .back { margin-top: 40px; }
+.legal-foot { max-width: 720px; margin: 0 auto; padding: 0 var(--gutter-r) 48px var(--gutter-l); }
 
 /* 404 */
-.lost { text-align: center; max-width: 720px; margin: 0 auto; padding: clamp(40px, 6vw, 64px) 5% clamp(64px, 8vw, 96px); }
-.lost h1 { font-size: clamp(2.4rem, 1.4rem + 3.6vw, 4rem); margin-top: 0.4em; }
-.lost .art { max-width: 520px; margin: 0 auto; }
+.lost { text-align: center; max-width: 760px; margin: 0 auto; padding: clamp(32px, 6vw, 64px) var(--gutter-r) clamp(48px, 8vw, 96px) var(--gutter-l); }
+.lost h1 { font-size: clamp(2.4rem, 1.4rem + 3.6vw, 4rem); margin: 0.3em 0 0.4em; }
+.lost .art { max-width: 640px; margin: 0 auto 24px; border-radius: 12px; overflow: hidden; }
 .lost .art svg { width: 100%; height: auto; }
 .lost p { max-width: 46ch; margin-left: auto; margin-right: auto; }
-.lost .hero-actions { justify-content: center; }
-.lost-links { list-style: none; padding: 0; margin: 30px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; }
+.lost .hero-actions { display: flex; flex-wrap: wrap; gap: 12px 18px; justify-content: center; align-items: center; margin-top: 24px; }
+.lost-links { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; }
 .lost-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 14px; border-radius: 999px; text-decoration: none; font-weight: 700; color: var(--ink-2); border: 1px solid var(--line); background: var(--paper); }
 .lost-links a:hover { color: var(--ink); background: var(--cream-2); }
-
-/* The illustrated shopfront, kept from the first version of the site */
-.rain line { stroke: #cac5c0; stroke-width: 2; stroke-linecap: round; opacity: 0.5; animation: fall 1.5s linear infinite; }
-.rain line:nth-child(2n) { animation-duration: 1.9s; opacity: 0.34; }
-.rain line:nth-child(3n) { animation-duration: 1.25s; animation-delay: -0.5s; opacity: 0.42; }
-.rain line:nth-child(4n) { animation-delay: -0.85s; }
-.rain line:nth-child(5n) { animation-duration: 2.1s; animation-delay: -1.2s; opacity: 0.28; }
-@keyframes fall { from { transform: translateY(0); } to { transform: translateY(470px); } }
-.s-facade { fill: #efe2d2; }
-.s-cornice { fill: var(--rose-ink); }
-.s-fascia { fill: var(--black); }
-.s-fascia-text { font-family: var(--serif); font-size: 21px; letter-spacing: 0.14em; fill: var(--cream); }
-.s-awning { fill: var(--rose); opacity: 0.95; }
-.s-awning-hem { fill: var(--rose-ink); }
-.s-window-frame { fill: #fff; stroke: #8f8a86; stroke-width: 2.5; }
-.s-shelf { stroke: rgba(33, 31, 34, 0.22); stroke-width: 1.5; }
-.s-mullion { stroke: #8f8a86; stroke-width: 2.5; }
-.s-item-a { fill: var(--rose); opacity: 0.85; }
-.s-item-b { fill: var(--rose-ink); opacity: 0.55; }
-.s-door { fill: #8f8a86; }
-.s-door-panel { fill: rgba(255, 255, 255, 0.14); }
-.s-handle { fill: var(--black); }
-.s-plaque { fill: var(--black); }
-.s-plaque-text { font-family: var(--sans); font-size: 13px; font-weight: 800; fill: var(--cream); }
-.s-bracket { stroke: var(--black); stroke-width: 2.5; stroke-linecap: round; }
-.s-sign { fill: var(--black); }
-.s-sign-canopy { fill: var(--rose); }
-.s-sign-handle { fill: none; stroke: var(--cream); stroke-width: 2; stroke-linecap: round; }
-.s-kerb { stroke: var(--ink-3); stroke-width: 2; opacity: 0.45; }
-.s-reflect { fill: #8f8a86; opacity: 0.3; }
-.s-ripple { fill: none; stroke: #fff; stroke-width: 1.4; opacity: 0.45; }
-.s-ripple.r2 { opacity: 0.3; }
-.s-ripple.r3 { opacity: 0.22; }
-@media (prefers-reduced-motion: reduce) { .rain line { animation: none; opacity: 0.3; } }
