@@ -127,21 +127,12 @@ main { padding-top: var(--chrome-h); }
 /* 01 The shopfront. The drawing is the headline. */
 .cut--shop { padding: 0; min-height: calc(100svh - var(--chrome-h)); background: #e9e1d6; display: block; }
 .shop-art { position: absolute; inset: 0; width: 100%; height: 100%; }
-.shop-line { position: absolute; left: var(--gutter-l); bottom: clamp(20px, 4vh, 40px); z-index: 2; max-width: 520px; background: rgba(251, 246, 240, 0.9); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: 14px 18px; border-radius: 8px; border: 1px solid var(--line); color: var(--ink); font-size: 0.95rem; }
-.shop-line h1 { font-family: var(--sc-font-display); font-weight: 500; font-size: 1.15rem; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.3; }
-.shop-line p { color: var(--ink-2); }
 .rain line { stroke: #9aa3a8; stroke-width: 2.2; stroke-linecap: round; opacity: 0.5; animation: fall 1.6s linear infinite; }
 .rain line:nth-child(2n) { animation-duration: 2s; opacity: 0.35; }
 .rain line:nth-child(3n) { animation-duration: 1.3s; animation-delay: -0.5s; }
 .rain line:nth-child(4n) { animation-delay: -0.9s; }
 .rain line:nth-child(5n) { animation-duration: 2.3s; animation-delay: -1.3s; opacity: 0.28; }
 @keyframes fall { to { transform: translateY(940px); } }
-
-/* 02 The window, this week */
-.window-cut .cut__grid { grid-template-columns: 0.9fr 1.1fr; }
-.window-fig { margin: 0; position: relative; max-width: 420px; justify-self: center; }
-.window-fig img { width: 100%; border-radius: 10px; aspect-ratio: 3 / 4; object-fit: cover; max-height: 76svh; }
-.window-fig figcaption { position: absolute; left: 14px; bottom: 14px; background: var(--paper); color: var(--ink); font-size: 0.78rem; font-weight: 700; padding: 6px 10px; border-radius: 4px; transform: rotate(-2deg); }
 
 /* 03 Who's it for? Rose owns this cut. The pick goes on the tag. */
 .occasions { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; }
@@ -153,21 +144,72 @@ main { padding-top: var(--chrome-h); }
 .pick-note { font-size: 0.92rem; min-height: 1.5em; }
 .pick-note strong { color: var(--ink); }
 
-/* 04 to 09 The shelves: six quick cuts */
-.shelf .cut__grid { align-items: center; }
-.shelf__num { font-family: var(--sc-font-display); font-size: clamp(5rem, 3rem + 10vw, 12rem); line-height: 0.85; letter-spacing: -0.05em; color: var(--rose-ink); font-variant-numeric: tabular-nums; opacity: 0.9; }
-.cut--dark .shelf__num { color: var(--rose); }
-.shelf__fig { margin: 0; justify-self: center; width: min(100%, 440px); }
-.shelf__fig img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; }
-.shelf__for { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; padding: 6px 12px; border-radius: 999px; background: var(--rose); color: var(--black); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* 01 The scene: the drawing fills the first screen; the tags on it are the way in */
+.cut--shop { padding: 0; min-height: calc(100svh - var(--chrome-h)); background: #e9e1d6; display: block; }
+.shop-art { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hot { cursor: pointer; outline: none; }
+.hot__ring { fill: none; stroke: #7f4f4b; stroke-width: 2; stroke-dasharray: 5 4; opacity: 0; transition: opacity 0.2s ease; }
+.hot:hover .hot__ring, .hot:focus-visible .hot__ring { opacity: 0.9; }
+.hot__tag { transition: translate 0.25s var(--ease); }
+.hot:hover .hot__tag, .hot:focus-visible .hot__tag { translate: 0 -4px; }
+.rain line { stroke: #9aa3a8; stroke-width: 2.2; stroke-linecap: round; opacity: 0.5; animation: fall 1.6s linear infinite; }
+.rain line:nth-child(2n) { animation-duration: 2s; opacity: 0.35; }
+.rain line:nth-child(3n) { animation-duration: 1.3s; animation-delay: -0.5s; }
+.rain line:nth-child(4n) { animation-delay: -0.9s; }
+.rain line:nth-child(5n) { animation-duration: 2.3s; animation-delay: -1.3s; opacity: 0.28; }
+@keyframes fall { to { transform: translateY(940px); } }
+
+/* Prints: a photo on paper, pinned to the wall at a slight angle, the caption written on the border */
+.print { position: relative; margin: 0; width: min(100%, 400px); background: var(--paper); padding: 14px 14px 20px; border-radius: 3px; box-shadow: 0 2px 4px rgba(20, 12, 10, 0.12), 0 18px 40px -12px rgba(20, 12, 10, 0.35); color: var(--ink-2); }
+.print img { width: 100%; display: block; }
+.print figcaption { padding: 14px 4px 0; font-size: 0.92rem; line-height: 1.5; }
+.print figcaption h2 { display: inline; font-size: 1.15rem; margin: 0 0.4em 0 0; }
+.print figcaption p { display: inline; }
+.print figcaption .shelf__num { display: inline-block; font-family: var(--sc-font-display); font-size: 1.6rem; line-height: 1; color: var(--rose-ink); margin-right: 0.35em; vertical-align: -0.12em; font-variant-numeric: tabular-nums; }
+.print__title { font-family: var(--sc-font-display); font-size: 1.15rem; color: var(--ink); }
+.print figcaption a { color: var(--rose-ink); font-weight: 700; }
+.print::before { content: ""; position: absolute; top: -10px; left: 50%; width: 54px; height: 20px; margin-left: -27px; background: rgba(203, 162, 159, 0.55); transform: rotate(-2deg); border-radius: 2px; }
+.print--l { justify-self: start; transform: rotate(-1.6deg); }
+.print--r { justify-self: end; transform: rotate(1.4deg); }
+.print--land { width: min(100%, 560px); }
+.print--window { width: min(100%, 460px); margin: 0 auto; transform: rotate(-1deg); }
+.print--wrap { width: min(100%, 340px); justify-self: center; transform: rotate(1.6deg); }
+.cut--dark .print { color: var(--ink-2); }
+.cut--dark .print figcaption h2, .cut--dark .print .print__title { color: var(--ink); }
+.shelf .cut__inner { display: grid; }
+.shelf__for { display: inline-flex; align-items: center; gap: 6px; margin: 10px 0 0; padding: 5px 11px; border-radius: 999px; background: var(--rose); color: var(--black); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 .shelf__for[hidden] { display: none; }
-.shelf__for::before { content: "✓"; font-size: 0.8rem; }
+.shelf__for::before { content: "\2713"; font-size: 0.8rem; }
+
+/* The cards cut: a folded greetings card, since there is no photo of the rack */
+.card { position: relative; width: min(100%, 440px); justify-self: start; background: var(--paper); padding: 34px 32px 30px 38px; border-radius: 2px 8px 8px 2px; box-shadow: 0 2px 4px rgba(20, 12, 10, 0.12), 0 18px 40px -12px rgba(20, 12, 10, 0.35); transform: rotate(-1.2deg); }
+.card::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 10px; background: linear-gradient(90deg, rgba(20, 12, 10, 0.16), rgba(20, 12, 10, 0)); }
+.card .shelf__num { font-family: var(--sc-font-display); font-size: clamp(3rem, 2rem + 4vw, 5rem); line-height: 0.9; color: var(--rose-ink); margin-bottom: 8px; font-variant-numeric: tabular-nums; }
+.card h2 { margin-bottom: 8px; }
+.card p { font-size: 0.95rem; }
+.note--float { margin-top: 28px; justify-self: start; }
 
 /* 10 The wrap */
-.wrap-fig { margin: 0; max-width: 320px; justify-self: center; }
-.wrap-fig img { border-radius: 12px; }
-.wrap-fig figcaption { margin-top: 10px; font-size: 0.8rem; font-style: italic; color: var(--on-dark-muted); text-align: center; }
 .cut--dark .lede { color: var(--on-dark); }
+.print figcaption:only-of-type { color: var(--ink-2); }
+
+/* 12 Find us: a postcard */
+.postcard { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; margin-top: 18px; }
+.postcard__front { margin: 0; background: var(--paper); padding: 12px 12px 14px; border-radius: 3px; box-shadow: 0 2px 4px rgba(20, 12, 10, 0.12), 0 18px 40px -12px rgba(20, 12, 10, 0.3); transform: rotate(-1.2deg); }
+.postcard__front img { width: 100%; display: block; }
+.postcard__front figcaption { padding: 10px 4px 0; font-size: 0.88rem; font-style: italic; color: var(--ink-3); }
+.postcard__back { position: relative; background: var(--paper); border-radius: 3px; box-shadow: 0 2px 4px rgba(20, 12, 10, 0.12), 0 18px 40px -12px rgba(20, 12, 10, 0.3); padding: 26px 26px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 26px; transform: rotate(0.8deg); background-image: linear-gradient(var(--line), var(--line)); background-size: 1px 78%; background-repeat: no-repeat; background-position: 50% 62%; }
+.postcard__stamp { grid-column: 2; justify-self: end; width: 74px; padding: 6px; background: var(--cream-2); border-radius: 2px; text-align: center; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--line); }
+.postcard__stamp svg { width: 40px; height: 40px; margin: 0 auto 2px; }
+.postcard__message { grid-column: 1; grid-row: 1 / span 3; font-family: var(--sc-font-display); font-style: italic; font-size: 1.05rem; line-height: 1.5; color: var(--ink-2); align-self: center; }
+.postcard__address { grid-column: 2; font-style: normal; display: flex; flex-direction: column; gap: 2px; font-size: 0.98rem; color: var(--ink); }
+.postcard__name { font-family: var(--sc-font-display); font-size: 1.2rem; }
+.postcard__address a { color: var(--rose-ink); text-decoration: underline; text-underline-offset: 3px; }
+.postcard__hours { font-weight: 800; margin-top: 6px; }
+.postcard__actions { grid-column: 2; margin-top: 6px; }
+.map-row { margin-top: 24px; }
+#visit.cut { padding-top: clamp(40px, 6vh, 64px); padding-bottom: clamp(40px, 6vh, 64px); }
 
 /* 11 The facts */
 .facts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -175,14 +217,7 @@ main { padding-top: var(--chrome-h); }
 .facts b { display: block; font-family: var(--sc-font-display); font-weight: 500; font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem); color: var(--ink); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
 .facts li > span { display: block; font-size: 0.86rem; color: var(--on-rose-muted); margin-top: 4px; }
 
-/* 12 Find us */
-.visit-facts { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: 0.98rem; align-items: baseline; }
-.visit-facts dt { font-weight: 800; color: var(--ink); }
-.visit-facts dd { margin: 0; }
-.visit-facts a { color: var(--rose-ink); text-decoration: underline; text-underline-offset: 3px; }
-.street-fig { margin: 0; }
-.street-fig img { border-radius: 10px; }
-.map-frame { position: relative; margin-top: 14px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--cream-2); aspect-ratio: 16 / 9; }
+.map-frame { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--cream-2); aspect-ratio: 3 / 1; }
 #shop-map { position: absolute; inset: 0; width: 100%; height: 100%; }
 .map-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 20px; text-align: center; background: radial-gradient(circle at 50% 50%, rgba(203, 162, 159, 0.4) 0 8px, transparent 9px), repeating-linear-gradient(0deg, transparent 0 34px, rgba(33, 31, 34, 0.06) 34px 35px), repeating-linear-gradient(90deg, transparent 0 34px, rgba(33, 31, 34, 0.06) 34px 35px), var(--cream-2); }
 .map-placeholder p { font-size: 0.84rem; max-width: 30ch; }
@@ -281,8 +316,6 @@ main { padding-top: var(--chrome-h); }
   .cut__grid--flip > :first-child { order: 0; }
   .facts { grid-template-columns: repeat(2, 1fr); }
   .close__inner { grid-template-columns: 1fr; }
-  .shelf__fig { width: min(100%, 320px); justify-self: start; }
-  .shelf__num { font-size: clamp(4rem, 2rem + 10vw, 8rem); }
 }
 @media (max-width: 700px) {
   :root { --awning-h: 52px; --strip-h: 26px; --ribbon-x: 12px; --ribbon-w: 9px; --gutter-l: 30px; --gutter-r: 18px; }
@@ -304,17 +337,18 @@ main { padding-top: var(--chrome-h); }
   .tag.is-set { transform: none; }
   @keyframes nudge { 0% { transform: none; } 40% { transform: translateY(2px) scale(1.06); } 100% { transform: none; } }
   .close__inner > .gift-tag { order: 2; margin-top: 8px; }
-}
-@media (max-width: 360px) {
-  .strip strong { display: none; }
   .close__copy { padding-top: 0; }
   .cut { min-height: 92svh; padding-top: clamp(64px, 10vh, 96px); padding-bottom: 48px; }
   .cut--short { min-height: 60svh; }
-  .cut--shop { min-height: 0; padding: 0; }
-  .shop-art { position: relative; height: auto; aspect-ratio: 1200 / 720; }
-  .shop-line { position: static; margin: 0; border-radius: 0; border-width: 1px 0 0; padding: 16px var(--gutter-r) 22px var(--gutter-l); max-width: none; background: var(--cream); backdrop-filter: none; }
-  .window-fig { max-width: none; width: 100%; }
-  .window-fig img { max-height: 62svh; aspect-ratio: 4 / 5; }
+  .cut--shop { min-height: calc(100svh - var(--chrome-h)); height: calc(100svh - var(--chrome-h)); padding: 0; }
+  .print, .print--land, .print--window { width: min(100%, 360px); }
+  .print--l, .print--r { justify-self: center; }
+  .postcard { grid-template-columns: 1fr; }
+  .postcard__back { grid-template-columns: 1fr; background-image: none; padding: 22px 20px; }
+  .postcard__stamp { grid-column: 1; grid-row: 1; }
+  .postcard__message, .postcard__address, .postcard__actions { grid-column: 1; grid-row: auto; }
+  .map-frame { aspect-ratio: 4 / 3; }
+  .card { transform: rotate(-0.8deg); padding: 26px 22px 24px 28px; }
   .facts { grid-template-columns: 1fr 1fr; gap: 10px; }
   .facts li { padding: 14px 14px; }
   .follow-grid { grid-template-columns: 1fr; }
@@ -326,4 +360,7 @@ main { padding-top: var(--chrome-h); }
   .gift-tag { padding: 20px 20px 20px 40px; }
   .cut--close { padding-top: 130px; }
   .close__foot { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 360px) {
+  .strip strong { display: none; }
 }

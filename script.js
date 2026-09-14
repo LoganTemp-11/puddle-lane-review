@@ -11,6 +11,17 @@
 
   if (window.ScrollCraft) ScrollCraft.mount(document.body);
 
+  /* The scene: on a phone the drawing frames the door, the open sign and the number,
+     so the tags on it are readable. Desktop sees the whole shopfront. */
+  var art = document.getElementById('shop-art');
+  function frameArt() {
+    if (!art) return;
+    var phone = window.matchMedia('(max-width: 700px)').matches;
+    art.setAttribute('viewBox', phone ? '860 120 330 600' : '0 0 1200 720');
+    art.setAttribute('preserveAspectRatio', phone ? 'xMaxYMid slice' : 'xMidYMid slice');
+  }
+  frameArt(); window.addEventListener('resize', frameArt);
+
   /* ---------- Who's it for? The pick goes on the tag. ----------
      Only Liza's six real categories; the mapping is editorial, nothing is invented. */
   var PICKS = {
