@@ -1,0 +1,8 @@
+# Puddle Lane, Falkirk. Concept stage: the site is not meant to be found yet,
+# so everything is disallowed and every page carries noindex as well.
+# At launch on the shop's own domain: change "Disallow: /" to "Allow: /",
+# remove the noindex meta from each page, and point the Sitemap line at the new domain.
+User-agent: *
+Disallow: /
+
+Sitemap: https://puddle-lane-review.pages.dev/sitemap.xml
